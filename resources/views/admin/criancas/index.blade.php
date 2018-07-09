@@ -39,7 +39,7 @@
 	  	<td>{{$crianca->naturalidade}}</td>
 	  	<td>{{$crianca->foto}}</td>
   		<td><a href="{{route('crianca.editar',['id'=>$crianca->crianca_id])}}" class="btn btn-success btn-xs">Editar</a></td>
-  		<td><a href="{{route('crianca.deletar',['id'=>$crianca->crianca_id])}}" class="btn btn-danger btn-xs">Excluir</a></td>
+  		<td><a href="{{route('crianca.deletar',['id'=>$crianca->crianca_id])}}" class="btn btn-danger btn-xs btn-excluir">Excluir</a></td>
 	  </tr>
 	  @endforeach
 	  @endif
