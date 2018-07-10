@@ -39,7 +39,7 @@ Registo de Padrinhos
 
    <div class="form-group">
     <label for="telefone">Telefone:</label>
-    <input type="number" class="form-control" name="telefone">
+    <input type="number" class="form-control" data-role="tags-input" name="telefone">
    </div>
 
    <div class="form-group">
