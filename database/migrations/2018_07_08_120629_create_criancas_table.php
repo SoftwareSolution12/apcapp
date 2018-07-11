@@ -16,12 +16,12 @@ class CreateCriancasTable extends Migration
         Schema::create('criancas', function (Blueprint $table) {
             $table->increments('crianca_id');
             $table->string('nome');
-            $table->char('sexo', 1);
+            $table->string('sexo');
             $table->integer('idade');
             $table->string('naturalidade');
             $table->double('peso');
             $table->double('altura');
-            $table->string('foto')->nullable();
+            $table->string('foto');
             $table->string('doenca')->nullable();
             $table->string('grau_necessidade');
             $table->boolean('estado');

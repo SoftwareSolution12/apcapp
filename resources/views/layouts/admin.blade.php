@@ -158,7 +158,7 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{-- {{ route('compras') }} --}}"><i class="fa fa-circle-o"></i>Atribuir padrinho</a></li>
+                <li><a href="{{ route('apadrinhamento')}}"><i class="fa fa-circle-o"></i>Atribuir padrinho</a></li>
                 <li><a href="{{-- {{ route('pedido.venda') }} --}}"><i class="fa fa-circle-o"></i>Criancas por apadrinhar</a></li>
               </ul>
             </li>

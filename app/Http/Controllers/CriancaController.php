@@ -36,14 +36,15 @@ class CriancaController extends Controller
             'altura'=>'required',
             'foto'=>'required|image',
             'grau_necessidade'=>'required',
-            'estado'=>'required',
         ]);
 
-        $imagem=$request->imagem;
+        $imagem=$request->foto;
 
         $imagem_nome=time().$imagem->getClientOriginalName();
 
         $imagem->move('uploads/criancas',$imagem_nome);
+
+        //dd($request->all());
 
         Crianca::create([
             'nome'=>$request->nome,
@@ -55,9 +56,11 @@ class CriancaController extends Controller
             'foto'=>'/uploads/criancas/'.$imagem_nome,
             'doenca'=>$request->doenca,
             'grau_necessidade'=>$request->grau_necessidade,
+            'estado'=>"1",
+            'descricao'=>$request->descricao,
         ]);
 
-        Session::flash('sucesso','Crianca Salvado com sucesso!');
+        Session::flash('sucesso','Crianca Salvada com sucesso!');
 
         return  redirect()->back();
     }
@@ -83,8 +86,13 @@ class CriancaController extends Controller
 
         $this->validate($request,[
             'nome'=>'required|max:100',
-            'preco'=>'required',
-            'categoria_id'=>'required'
+            'sexo'=>'required|max:10',
+            'idade'=>'required',
+            'naturalidade'=>'required',
+            'peso'=>'required',
+            'altura'=>'required',
+            'foto'=>'required|image',
+            'grau_necessidade'=>'required',
         ]);
 
         if($request->hasFile('foto')){
@@ -95,15 +103,15 @@ class CriancaController extends Controller
 
             $imagem->move('uploads/criancas',$imagem_nome);
 
-            $produto->imagem='/uploads/criancas/'.$featured_new_name;
+            $crianca->imagem='/uploads/criancas/'.$featured_new_name;
 
         }
 
-        $produto->nome=$request->nome;
-        $produto->preco=$request->preco;
-        $produto->descricao=$request->descricao;
-        $produto->categoria_id=$request->categoria_id;
-        $produto->save();
+        $crianca->nome=$request->nome;
+        $crianca->sexo=$request->sexo;
+        $crianca->idade=$request->idade;
+        $crianca->categoria_id=$request->categoria_id;
+        $crianca->save();
 
         Session::flash('sucesso','Crianca Atualizada com sucesso!');
 

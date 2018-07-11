@@ -66,6 +66,10 @@ Registo de Criancas
     </select>
    </div>
 
+   <!-- <div class="form-group">
+    <input type="hidden" class="form-control" name="estado" value="1">
+   </div> -->
+
    <div class="form-group">
     <label for="descricao">Descricao:</label>
     <textarea class="form-control" rows="5" name="descricao"></textarea>
