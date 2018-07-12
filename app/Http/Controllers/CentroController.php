@@ -20,11 +20,13 @@ class CentroController extends Controller
     {
     	 return view('admin.apadrinhamentos.index')->with('padrinhos', Padrinho::all());
     }
+
+    
     public function apadrinhar($id)
     {
     	$padrinho = Padrinho::find($id);
     	$crianca = DB::table('criancas')->select("criancas.*")->where('estado', 0)->orderBy(DB::raw('RAND()'))->take(1)->first();
-    	return view('centros.create', compact('crianca','padrinho'));
+    	return view('admin.apadrinhamentos.create', compact('crianca','padrinho'));
     }
     public function guardar($id_padrinho, $id_crianca)
     {

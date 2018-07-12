@@ -56,7 +56,7 @@ class CriancaController extends Controller
             'foto'=>'/uploads/criancas/'.$imagem_nome,
             'doenca'=>$request->doenca,
             'grau_necessidade'=>$request->grau_necessidade,
-            'estado'=>"1",
+            'estado'=>"0",
             'descricao'=>$request->descricao,
         ]);
 
@@ -101,7 +101,7 @@ class CriancaController extends Controller
 
             $imagem_nome=time().$imagem->getClientOriginalName();
 
-            $imagem->move('uploads/criancas',$imagem_nome);
+            $imagem->move('uploads/criancas', $imagem_nome);
 
             $crianca->imagem='/uploads/criancas/'.$featured_new_name;
 
@@ -110,7 +110,7 @@ class CriancaController extends Controller
         $crianca->nome=$request->nome;
         $crianca->sexo=$request->sexo;
         $crianca->idade=$request->idade;
-        $crianca->categoria_id=$request->categoria_id;
+        $crianca->naturalidade=$request->naturalidade;
         $crianca->save();
 
         Session::flash('sucesso','Crianca Atualizada com sucesso!');

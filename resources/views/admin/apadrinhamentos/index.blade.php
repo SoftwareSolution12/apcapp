@@ -40,7 +40,7 @@
 	  	<td>{{$padrinho->telefone}}</td>
 	  	<td>{{$padrinho->email}}</td>
 	  	<!-- <td>{{$padrinho->categorias->nome}}</td> -->
-	  	<td><a href="{{route('padrinho.editar',['id'=>$padrinho->padrinho_id])}}" class="btn btn-success btn-xs">Apadrinhar</a></td>
+	  	<td><a href="{{route('apadrinhar',['id' => $padrinho->padrinho_id])}}" class="btn btn-success btn-xs">Apadrinhar</a></td>
 	  	<!-- <td><a href="{{route('padrinho.deletar',['id'=>$padrinho->padrinho_id])}}" class="btn btn-danger btn-xs btn-excluir">Excluir</a></td> -->
 	  </tr>
 	  @endforeach
