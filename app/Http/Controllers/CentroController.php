@@ -39,9 +39,12 @@ class CentroController extends Controller
     	$crianca->estado = 1;
     	$crianca->update();
     	$padrinho_crianca->save();
-    	//return redirect('/list');
 
     	Session::flash('sucesso','Crianca Apadrinhada com sucesso!');
+
+    	return redirect('/admin/lista_apadrinhamento');
+
+    	 //return  redirect()->back();
 } 
   public function remover($id_padrinho, $id_crianca)
     {
@@ -56,6 +59,6 @@ class CentroController extends Controller
 public function listarPadrinhoCrianca()
 {
     $padrinhoCriancas = PadrinhoCrianca::with('padrinho', 'crianca')->get();
-    return view('centros.list', ['padrinhoCriancas' => $padrinhoCriancas]);
+    return view('admin.apadrinhamentos.lista', ['padrinhoCriancas' => $padrinhoCriancas]);
 }
 }

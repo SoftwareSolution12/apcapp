@@ -159,7 +159,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ route('apadrinhamento')}}"><i class="fa fa-circle-o"></i>Atribuir padrinho</a></li>
-                <li><a href="{{-- {{ route('lista_apadrinhamento') }} --}}"><i class="fa fa-circle-o"></i>Criancas apadrinhadas</a></li>
+                <li><a href="{{ route('lista_apadrinhamento')}}"><i class="fa fa-circle-o"></i>Criancas apadrinhadas</a></li>
               </ul>
             </li>
 
