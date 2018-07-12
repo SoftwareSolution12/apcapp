@@ -21,23 +21,27 @@ class CentroController extends Controller
     	 return view('admin.apadrinhamentos.index')->with('padrinhos', Padrinho::all());
     }
 
-    
+
     public function apadrinhar($id)
     {
     	$padrinho = Padrinho::find($id);
     	$crianca = DB::table('criancas')->select("criancas.*")->where('estado', 0)->orderBy(DB::raw('RAND()'))->take(1)->first();
     	return view('admin.apadrinhamentos.create', compact('crianca','padrinho'));
     }
-    public function guardar($id_padrinho, $id_crianca)
+
+    public function guardar($padrinho_id, $crianca_id)
     {
+    	dd($padrinho_id, $crianca_id);
     	$padrinho_crianca = new PadrinhoCrianca();
     	$padrinho_crianca->padrinho_id = $id_padrinho;
     	$padrinho_crianca->crianca_id = $id_crianca;                                 
     	$crianca = Crianca::find($id_crianca);
-    	$crianca->estado = true;
+    	$crianca->estado = 1;
     	$crianca->update();
     	$padrinho_crianca->save();
-    	return redirect('/list');
+    	//return redirect('/list');
+
+    	Session::flash('sucesso','Crianca Apadrinhada com sucesso!');
 } 
   public function remover($id_padrinho, $id_crianca)
     {
@@ -47,7 +51,7 @@ class CentroController extends Controller
         $crianca_aux->update();
         PadrinhoCrianca::where('padrinho_id',$id_padrinho)->where('crianca_id',$id_crianca)->delete();
         
-        return redirect('/list');
+        //return redirect('/list');
 } 
 public function listarPadrinhoCrianca()
 {

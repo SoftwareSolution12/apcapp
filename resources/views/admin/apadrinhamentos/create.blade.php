@@ -21,9 +21,9 @@ Padrinho e Crianca
 <p>{{$crianca->nome}}</p>
 </div>
 
-<a class='btn btn-info btn-xs' href="{{route('padrinho_crianca', ['id' => $padrinho->padrinho_id],['id' => $crianca->crianca_id])}}">
+<a class='btn btn-info btn-xs' href="{{route('padrinho_crianca',['padrinho_id' => $padrinho->padrinho_id],['crianca_id' => $crianca->crianca_id])}}">
       <span class="glyphicon glyphicon-save"></span>Apadrinhar</a>
-  <a href="{{route('apadrinhar')}}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Cancelar</a>
+  <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Cancelar</a>
 
 
 @endsection
