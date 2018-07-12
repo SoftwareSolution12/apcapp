@@ -52,9 +52,11 @@ class CentroController extends Controller
         $crianca_aux = Crianca::find($id_crianca);
         $crianca_aux->estado = false;
         $crianca_aux->update();
-        PadrinhoCrianca::where('padrinho_id',$id_padrinho)->where('crianca_id',$id_crianca)->delete();
+        PadrinhoCrianca::where('padrinho_id', $id_padrinho)->where('crianca_id',$id_crianca)->delete();
         
-        //return redirect('/list');
+        Session::flash('sucesso','Crianca Desapadrinhada com sucesso!');
+
+    	return redirect('/admin/lista_apadrinhamento');
 } 
 public function listarPadrinhoCrianca()
 {

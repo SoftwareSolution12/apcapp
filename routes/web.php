@@ -263,7 +263,10 @@ Route::get('/padrinho_crianca/{id_padrinho}/{id_crianca}', [
 		'as' => 'padrinho_crianca'
 	]);
 
-Route::get('/padrinho_crianca_remove/{id_padrinho}/{id_crianca}', 'CentroController@remover');
+Route::get('/padrinho_crianca_remove/{id_padrinho}/{id_crianca}', [
+		'uses' => 'CentroController@remover',
+		'as' => 'p_c_r'
+	]);
 
 Route::get('/lista_apadrinhamento',[
 		'uses' => 'CentroController@listarPadrinhoCrianca',
