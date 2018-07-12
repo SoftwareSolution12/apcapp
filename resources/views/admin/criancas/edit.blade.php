@@ -1,22 +1,22 @@
 @extends('layouts.admin')
 
 @section('titulo')
-	Editando Padrinho
+  Editando Crianca
 @endsection
 
 
 @section('conteudo')
 
 @section('titulo_pagina')
-Editando Padrinhos
+Editando Criancas
 @endsection
 
 <br>
-<form method="post" action="{{route('padrinho.atualizar',['id'=>$padrinho->padrinho_id])}}" enctype="multipart/form-data">
-	{{ csrf_field() }}
-   <div class="form-group">
+<form method="post" action="{{route('crianca.atualizar',['id'=>$crianca->crianca_id])}}" enctype="multipart/form-data">
+  {{ csrf_field() }}
+  <div class="form-group">
     <label for="nome">Nome:</label>
-    <input type="text" class="form-control" name="nome" value="{{$padrinho->nome}}">
+    <input type="text" class="form-control" name="nome" value="{{$crianca->nome}}">
   </div>
 
    <div class="form-group">
@@ -29,41 +29,55 @@ Editando Padrinhos
 
    <div class="form-group">
     <label for="idade">Idade:</label>
-    <input type="number" class="form-control" name="idade" value="{{$padrinho->idade}}">
+    <input type="number" class="form-control" name="idade" value="{{$crianca->idade}}">
   </div>
 
    <div class="form-group">
-    <label for="profissao">Profissao:</label>
-    <input type="text" class="form-control" name="profissao" value="{{$padrinho->profissao}}">
+    <label for="naturalidade">Naturalide:</label>
+    <input type="text" class="form-control" name="naturalidade" value="{{$crianca->naturalidade}}">
    </div>
 
    <div class="form-group">
-    <label for="telefone">Telefone:</label>
-    <input type="number" class="form-control" name="telefone" value="{{$padrinho->telefone}}">
+    <label for="peso">Peso:</label>
+    <input type="text" class="form-control" name="peso" value="{{$crianca->peso}}">
    </div>
 
    <div class="form-group">
-    <label for="email">Email:</label>
-    <input type="email" class="form-control" name="email" value="{{$padrinho->email}}">
+    <label for="altura">Altura:</label>
+    <input type="text" class="form-control" name="altura" value="{{$crianca->altura}}">
    </div>
 
    <div class="form-group">
-    <select class="form-control" name="categoria_id"> 
-    	@foreach($categorias as $categoria)
-    	
-    	<option value="{{$categoria->categoria_id}}"
-    	@if($categoria->nome===$padrinho->categorias->nome)
-    		selected
-    	@endif
+    <label for="foto">Foto:</label>
+    <input type="file" class="form-control" name="foto" value="{{$crianca->foto}}">
+   </div>
 
-    	>{{$categoria->nome}}</option>
-    	@endforeach
+   <div class="form-group">
+    <label for="doenca">Doenca:</label>
+    <input type="text" class="form-control" name="doenca" value="{{$crianca->doenca}}">
+   </div>
+
+   <div class="form-group">
+    <label for="grau_necessidade">Grau de Necessidade:</label>
+    <select class="form-control" name="grau_necessidade">
+      <option value="Alta">Alta</option>
+      <option value="Media">Media</option>
+      <option value="Baixa">Baixa</option>
     </select>
    </div>
 
+   <!-- <div class="form-group">
+    <input type="hidden" class="form-control" name="estado" value="1">
+   </div> -->
+
+   <div class="form-group">
+    <label for="descricao">Descricao:</label>
+    <textarea class="form-control" rows="5" name="descricao" value="{{$crianca->descricao}}"></textarea>
+   </div>
+
   <button type="submit" class="btn btn-primary">
-  	Atualizar Padrinho
-  </button>	
+    Actualizar Crianca
+  </button> 
 </form>
 <br>
 

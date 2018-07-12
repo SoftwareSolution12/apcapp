@@ -15,7 +15,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Criancas <br>Apadrinhadas</span>
-              <span class="info-box-number">{{-- {{$numeroDePedidoPagos}} --}}</span>
+              <span class="info-box-number">{{$numeroDecriancasApadrinhadas}}</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -32,7 +32,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Criancas<br>Por Apadrinhar</span>
-              <span class="info-box-number">{{-- {{$numeroDeItensGarcom}} --}}</span>
+              <span class="info-box-number">{{$numeroDecriancasPorApadrinhar}}</span>
             </div>
             <!-- /.info-box-content -->
           </div>

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use Cart;
-use App\Pedido;
+use App\Crianca;
 use App\Item;
 use App\User;
 class HomeController extends Controller
@@ -18,19 +18,16 @@ class HomeController extends Controller
 
     public function index()
     {
-        // $pedidospago=Pedido::where('estado','pago')->get();
-        // // $numeroDePedidoPagos=count($pedidospago);
+        $criancasApadrinhadas=Crianca::where('estado','1')->get();
+        $numeroDecriancasApadrinhadas=count($criancasApadrinhadas);
 
-        // // $itensGarsom=Item::where('estado','preparado')->get();
-        // // $numeroDeItensGarcom=count($itensGarsom);
-
-        // // $itensCozinha=Item::where('estado','normal')->get();
-        // // $numeroDeItensCozinha=count($itensCozinha);
-
+        $criancasPorApadrinhar=Crianca::where('estado','0')->get();
+        $numeroDecriancasPorApadrinhar=count($criancasPorApadrinhar);
+        
         $usuarios=User::all();
         $numeroDeUsuarios=count($usuarios);
 
-        return view('admin.home',compact('numeroDeUsuarios'));
+        return view('admin.home',compact('numeroDeUsuarios','numeroDecriancasApadrinhadas','numeroDecriancasPorApadrinhar'));
     }
 
 
@@ -43,12 +40,12 @@ class HomeController extends Controller
         return view('admin.outros.sobre');
     }
 
-    public function demandasCozinha(){
-        return view('admin.vendas.demanda_cozinha');
-    }
+    // public function demandasCozinha(){
+    //     return view('admin.vendas.demanda_cozinha');
+    // }
 
-    public function demandasGarcom(){
-        return view('admin.vendas.demanda_garcom');
-    }
+    // public function demandasGarcom(){
+    //     return view('admin.vendas.demanda_garcom');
+    // }
 
 }

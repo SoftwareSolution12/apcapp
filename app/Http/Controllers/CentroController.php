@@ -45,7 +45,7 @@ class CentroController extends Controller
     	return redirect('/admin/lista_apadrinhamento');
 
     	 //return  redirect()->back();
-} 
+	} 
   public function remover($id_padrinho, $id_crianca)
     {
        
@@ -57,10 +57,12 @@ class CentroController extends Controller
         Session::flash('sucesso','Crianca Desapadrinhada com sucesso!');
 
     	return redirect('/admin/lista_apadrinhamento');
-} 
-public function listarPadrinhoCrianca()
-{
-    $padrinhoCriancas = PadrinhoCrianca::with('padrinho', 'crianca')->get();
-    return view('admin.apadrinhamentos.lista', ['padrinhoCriancas' => $padrinhoCriancas]);
-}
+	} 
+
+
+	public function listarPadrinhoCrianca()
+	{
+	    $padrinhoCriancas = PadrinhoCrianca::with('padrinho', 'crianca')->get();
+	    return view('admin.apadrinhamentos.lista', ['padrinhoCriancas' => $padrinhoCriancas]);
+	}
 }

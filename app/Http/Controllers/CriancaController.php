@@ -111,6 +111,11 @@ class CriancaController extends Controller
         $crianca->sexo=$request->sexo;
         $crianca->idade=$request->idade;
         $crianca->naturalidade=$request->naturalidade;
+        $crianca->peso=$request->peso;
+        $crianca->altura=$request->altura;
+        $crianca->doenca=$request->doenca;
+        $crianca->grau_necessidade=$request->grau_necessidade;
+        $crianca->descricao=$request->descricao;
         $crianca->save();
 
         Session::flash('sucesso','Crianca Atualizada com sucesso!');

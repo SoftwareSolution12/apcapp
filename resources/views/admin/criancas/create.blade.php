@@ -39,11 +39,11 @@ Registo de Criancas
 
    <div class="form-group">
     <label for="peso">Peso:</label>
-    <input type="number" class="form-control" name="peso">
+    <input type="text" class="form-control" name="peso">
    </div>
 
    <div class="form-group">
-    <label for="altura">Altura:</label>
+    <label for="text">Altura:</label>
     <input type="number" class="form-control" name="altura">
    </div>
 
