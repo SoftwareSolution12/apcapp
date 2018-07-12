@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Crianca extends Model
 {
     protected $table='criancas';
-    protected $primaryKey='padrinho_id';
+    protected $primaryKey='crianca_id';
     protected $fillable=['nome','sexo','idade','naturalidade','peso','altura','foto','doenca','grau_necessidade','estado','descricao'];
 
 

@@ -29,9 +29,9 @@ class CentroController extends Controller
     	return view('admin.apadrinhamentos.create', compact('crianca','padrinho'));
     }
 
-    public function guardar($padrinho_id, $crianca_id)
+    public function guardar($id_padrinho, $id_crianca)
     {
-    	dd($padrinho_id, $crianca_id);
+    	//dd($id_padrinho, $id_crianca);
     	$padrinho_crianca = new PadrinhoCrianca();
     	$padrinho_crianca->padrinho_id = $id_padrinho;
     	$padrinho_crianca->crianca_id = $id_crianca;                                 

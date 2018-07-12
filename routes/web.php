@@ -258,7 +258,7 @@ Route::get('/apadrinhar/{id}', [
 		'as' => 'apadrinhar'
 	]);
 
-Route::get('/padrinho_crianca/{padrinho_id}/{crianca_id}', [
+Route::get('/padrinho_crianca/{id_padrinho}/{id_crianca}', [
 		'uses' => 'CentroController@guardar',
 		'as' => 'padrinho_crianca'
 	]);
