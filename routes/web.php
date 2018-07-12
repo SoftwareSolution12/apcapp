@@ -178,7 +178,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 Route::get('/apadrinhamento', [
 		'uses' =>'CentroController@index',
 		'as' => 'apadrinhamento'
-	]);
+	])->middleware('simple');
 
 Route::get('/apadrinhar/{id}', [
 		'uses' => 'CentroController@apadrinhar',

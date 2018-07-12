@@ -18,7 +18,7 @@ class Admin
     {
         if(Auth::user()->perfil->nome!=='admin')
         {
-            Session::flash('warning','Usuario nao autorizado a aceder essa rota Admin!');
+            Session::flash('warning','Utilizador nao autorizado a aceder essa rota!');
 
             return redirect()->route('sobre');
         }

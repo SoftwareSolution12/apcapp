@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Auth;
 use Session;
-class Cozinheiro_a
+class Simples
 {
     /**
      * Handle an incoming request.
@@ -16,9 +16,9 @@ class Cozinheiro_a
      */
     public function handle($request, Closure $next)
     {
-         if(Auth::user()->perfil->nome!=='cozinheiro_a')
+         if(Auth::user()->perfil->nome!=='simple')
         {
-            Session::flash('warning','Usuario nao autorizado a aceder essa rota!');
+            Session::flash('warning','Utilizador nao autorizado a aceder essa rota!');
 
             return redirect()->back();
         }

@@ -36,7 +36,7 @@
 	  <tr>
 	  	<td>{{$pc->padrinho->nome}}</td>
 	  	<td>{{$pc->crianca->nome}}</td>
-	  	<td><a href="{{route('p_c_r',['id_padrinho' => $pc->padrinho->padrinho_id,'id_crianca' => $pc->crianca->crianca_id])}}" class="btn btn-danger btn-xs btn-excluir">Excluir</a></td>
+	  	<td><a href="{{route('p_c_r',['id_padrinho' => $pc->padrinho->padrinho_id,'id_crianca' => $pc->crianca->crianca_id])}}" class="btn btn-danger btn-xs btn-excluir">Desapadrinhar</a></td>
 	  </tr>
 	  @endforeach
 	  @endif
