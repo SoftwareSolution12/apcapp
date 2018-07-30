@@ -16,7 +16,11 @@ class Simples
      */
     public function handle($request, Closure $next)
     {
+
          if(Auth::user()->perfil->nome!=='simples')
+
+         if(Auth::user()->perfil->nome!=='simple')
+
         {
             Session::flash('warning','Utilizador nao autorizado a aceder essa rota!');
 
