@@ -50,7 +50,7 @@ class CentroController extends Controller
     {
        
         $crianca_aux = Crianca::find($id_crianca);
-        $crianca_aux->estado = false;
+        $crianca_aux->estado = 0;
         $crianca_aux->update();
         PadrinhoCrianca::where('padrinho_id', $id_padrinho)->where('crianca_id',$id_crianca)->delete();
         

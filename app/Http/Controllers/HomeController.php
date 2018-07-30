@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Session;
 use Cart;
 use App\Crianca;
-use App\Item;
 use App\User;
 class HomeController extends Controller
 {
@@ -39,13 +38,4 @@ class HomeController extends Controller
     public function sobre(){
         return view('admin.outros.sobre');
     }
-
-    // public function demandasCozinha(){
-    //     return view('admin.vendas.demanda_cozinha');
-    // }
-
-    // public function demandasGarcom(){
-    //     return view('admin.vendas.demanda_garcom');
-    // }
-
 }

@@ -44,7 +44,7 @@ Registo de Criancas
 
    <div class="form-group">
     <label for="text">Altura:</label>
-    <input type="number" class="form-control" name="altura">
+    <input type="text" class="form-control" name="altura">
    </div>
 
    <div class="form-group">

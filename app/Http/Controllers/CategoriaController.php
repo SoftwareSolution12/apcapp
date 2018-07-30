@@ -34,7 +34,7 @@ class CategoriaController extends Controller
             'nome'=>$request->nome
         ]);
 
-        Session::flash('sucesso','Categoria Salvada com sucesso!');
+        Session::flash('sucesso','Categoria Registada com sucesso!');
 
         return  redirect()->back();
     }
@@ -62,7 +62,7 @@ class CategoriaController extends Controller
         $categoria->nome=$request->nome;
         $categoria->save();
 
-        Session::flash('sucesso','Categoria Atualizada com sucesso!');
+        Session::flash('sucesso','Categoria Actualizada com sucesso!');
 
         return  redirect()->route('categorias');
     }

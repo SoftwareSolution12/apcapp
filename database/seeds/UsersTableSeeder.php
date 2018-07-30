@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
        ]);
 
        $perfil2=App\Perfil::create([
-        'nome'=>'simple'
+        'nome'=>'simples'
        ]);
 
        

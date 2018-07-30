@@ -20,8 +20,8 @@
 	  <tr>
 	  	<th>Nome</th>
 	  	<th>Idade</th>
+	  	<th>Sexo</th>
 	  	<th>Naturalidade</th>
-	  	<th>Foto</th>
 	  	<th>Editar</th>
 	  	<th>Excluir</th>
 	  </tr>
@@ -36,8 +36,8 @@
 	  <tr>
 	  	<td>{{$crianca->nome}}</td>
 	  	<td>{{$crianca->idade}}</td>
+	  	<td>{{$crianca->sexo}}</td>
 	  	<td>{{$crianca->naturalidade}}</td>
-	  	<td>{{$crianca->foto}}</td>
   		<td><a href="{{route('crianca.editar',['id'=>$crianca->crianca_id])}}" class="btn btn-success btn-xs">Editar</a></td>
   		<td><a href="{{route('crianca.deletar',['id'=>$crianca->crianca_id])}}" class="btn btn-danger btn-xs btn-excluir">Excluir</a></td>
 	  </tr>

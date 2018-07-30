@@ -15,6 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/padrinho/cadastrar',[
+		'uses'=>'FrontEndController@create',
+		'as'=>'padrinho.cadastrar'
+	]);
+
+Route::post('/padrinho/registar',[
+		'uses'=>'FrontEndController@store',
+		'as'=>'padrinho.registar'
+	]);
+
+
 Auth::routes();
 
 
@@ -92,6 +103,12 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
 	//criancas
 
+	Route::get('/criancas',[
+		'uses'=>'CriancaController@index',
+		'as'=>'criancas'
+	]); 
+
+
 	Route::post('/crianca/salvar',[
 		'uses'=>'CriancaController@store',
 		'as'=>'crianca.salvar'
@@ -112,51 +129,45 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 		'as'=>'crianca.editar'
 	]);
 
-	
-
 	Route::get('/crianca/{id}/deletar',[
 		'uses'=>'CriancaController@destroy',
 		'as'=>'crianca.deletar'
 	]);
 
-	Route::get('/criancas',[
-		'uses'=>'CriancaController@index',
-		'as'=>'criancas'
-	]); 
-
+	
 
 	//usuarios
 
 	Route::get('/usuarios',[
 		'uses'=>'UsuarioController@index',
 		'as'=>'usuarios'
-	]);
+	])->middleware('admin');
 
 
 	Route::get('/usuario/{id}/deletar',[
 		'uses'=>'UsuarioController@destroy',
 		'as'=>'usuario.deletar'
-	]);
+	])->middleware('admin');
 
 	Route::get('/usuario/{id}/editar',[
 		'uses'=>'UsuarioController@edit',
 		'as'=>'usuario.editar'
-	]);
+	])->middleware('admin');
 
 	Route::get('/usuario/cadastrar',[
 		'uses'=>'UsuarioController@create',
 		'as'=>'usuario.cadastrar'
-	]);
+	])->middleware('admin');
 
 	Route::post('/usuario/salvar',[
 		'uses'=>'UsuarioController@store',
 		'as'=>'usuario.salvar'
-	]);
+	])->middleware('admin');
 
 	Route::post('/usuario/{id}/atualizar',[
 		'uses'=>'UsuarioController@update',
 		'as'=>'usuario.atualizar'
-	]);
+	])->middleware('admin');
 
 	//outras rotas
 
@@ -172,7 +183,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 	
 
 
-	//====================== Rotas Apadrinhamento ==========================
+	//====================== Rotas de Apadrinhamento ==========================
 
 
 Route::get('/apadrinhamento', [

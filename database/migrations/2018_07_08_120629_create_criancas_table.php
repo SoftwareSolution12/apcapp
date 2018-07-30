@@ -25,7 +25,7 @@ class CreateCriancasTable extends Migration
             $table->string('doenca')->nullable();
             $table->string('grau_necessidade');
             $table->boolean('estado');
-            $table->longText('descricao');
+            $table->longText('descricao')->nullable();
             $table->timestamps();
         });
     }

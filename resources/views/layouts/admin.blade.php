@@ -187,8 +187,8 @@
               </a>
               <ul class="treeview-menu">
 
-                <li><a href="{{route('usuario.cadastrar')}}"><i class="fa fa-circle-o"></i>Registar Usuarios</a></li>
-                <li><a href="{{route('usuarios')}}"><i class="fa fa-circle-o"></i>Usuarios</a></li>
+                <li><a href="{{route('usuario.cadastrar')}}"><i class="fa fa-circle-o"></i>Registar Utilizadores</a></li>
+                <li><a href="{{route('usuarios')}}"><i class="fa fa-circle-o"></i>Utilizadores</a></li>
               </ul>
             </li>
              <li>

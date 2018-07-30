@@ -15,7 +15,7 @@ class CriancaController extends Controller
     
     public function index()
     {
-        return view('admin.criancas.index')->with('criancas', Crianca::all());
+        return view('admin.criancas.index')->with('criancas', Crianca::all()->where('estado', 0));
     }
 
   
@@ -60,7 +60,7 @@ class CriancaController extends Controller
             'descricao'=>$request->descricao,
         ]);
 
-        Session::flash('sucesso','Crianca Salvada com sucesso!');
+        Session::flash('sucesso','Crianca Registada com sucesso!');
 
         return  redirect()->back();
     }
@@ -118,7 +118,7 @@ class CriancaController extends Controller
         $crianca->descricao=$request->descricao;
         $crianca->save();
 
-        Session::flash('sucesso','Crianca Atualizada com sucesso!');
+        Session::flash('sucesso','Criança Actualizada com sucesso!');
 
         return  redirect()->route('criancas');
     }
@@ -128,7 +128,7 @@ class CriancaController extends Controller
     {
         $produtp=Crianca::find($id);
         $produtp->delete();
-        Session::flash('sucesso','Crianca Excluida com sucesso!');
+        Session::flash('sucesso','Criança Excluida com sucesso!');
         return  redirect()->back();
     }
 }

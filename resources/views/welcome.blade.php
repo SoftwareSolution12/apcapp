@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
-@section('conteudo')
-
-<p>Minha Aplicacao Admin</p>
+@section('content')
+	@include('frontend.index')
 
 @endsection

@@ -72,7 +72,7 @@ Editando Criancas
 
    <div class="form-group">
     <label for="descricao">Descricao:</label>
-    <textarea class="form-control" rows="5" name="descricao" value="{{$crianca->descricao}}"></textarea>
+    <textarea class="form-control" rows="5" name="descricao">{{$crianca->descricao}}</textarea>
    </div>
 
   <button type="submit" class="btn btn-primary">

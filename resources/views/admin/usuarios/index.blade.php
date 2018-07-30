@@ -1,21 +1,21 @@
 @extends('layouts.admin')
 
 @section('titulo')
-Usuarios
+Utilizadores
 @endsection
 
 @section('conteudo')
 
 	<!-- Titulo da pagina -->
 	@section('titulo_pagina')
-	Lista de Usuarios
+	Lista de Utilizadores
 	@endsection
 	<!-- Fim titulo da pagina -->
 	
 	<div class="table-responsive">
 	  <table class="table table-bordered">
 	  <tr>
-	  	<th>Usuario Nome</th>
+	  	<th>Nome do Utilizador</th>
 	  	<th>Email</th>
 	  	<th>Perfil</th>
 	  	<th class="text-center">Excluir</th>
@@ -24,7 +24,7 @@ Usuarios
 	  @if($usuarios->count()===0)
 
 	  	<tr>
-	  		<th colspan="3" class="text-center"> Usuarios nao cadastrados ainda.</th>
+	  		<th colspan="3" class="text-center"> Utilizadores nao registados ainda.</th>
 	  	</tr>
 	  @else
 	  @foreach($usuarios as $usuario)

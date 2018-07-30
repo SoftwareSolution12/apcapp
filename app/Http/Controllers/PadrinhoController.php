@@ -49,7 +49,7 @@ class PadrinhoController extends Controller
             'categoria_id'=>$request->categoria_id
         ]);
 
-        Session::flash('sucesso','Padrinho Salvado com sucesso!');
+        Session::flash('sucesso','Padrinho Registado com sucesso!');
 
         return  redirect()->back();
     }
@@ -93,7 +93,7 @@ class PadrinhoController extends Controller
         $padrinho->categoria_id=$request->categoria_id;
         $padrinho->save();
 
-        Session::flash('sucesso','Padrinho Atualizado com sucesso!');
+        Session::flash('sucesso','Padrinho Actualizado com sucesso!');
 
         return  redirect()->route('padrinhos');
     }
